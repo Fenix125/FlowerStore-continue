@@ -3,8 +3,8 @@ package com.example.demo.decor;
 import com.example.demo.flowers.Item;
 
 public class KibbonDecorator extends ItemDecorator {
-    private Item item;
     private static final double KIBBON_COST = 40.0;
+    private Item item;
     public KibbonDecorator(Item item) {
         this.item = item;
     }

@@ -30,7 +30,7 @@ public class Flower extends Item {
     }
     @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
     @Override
     public double getPrice() {

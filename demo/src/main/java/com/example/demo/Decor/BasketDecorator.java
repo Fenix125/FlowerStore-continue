@@ -3,8 +3,8 @@ package com.example.demo.decor;
 import com.example.demo.flowers.Item;
 
 public class BasketDecorator extends ItemDecorator {
-    private Item item;
     private static final double BASKET_COST = 4.0;
+    private Item item;
     public BasketDecorator(Item item) {
         this.item = item;
         
