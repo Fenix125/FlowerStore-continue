@@ -12,31 +12,31 @@ public class Order {
     private Payment payment;
     private Delivery delivery;
 
-    public Order(){
+    public Order() {
         items = new ArrayList<>();
         totalPrice = 0;
     }
-    public void addItem(Item it){
+    public void addItem(Item it) {
         this.items.add(it);
         this.totalPrice += it.getPrice();
     }
-    public Item removeItem(Item it){
+    public Item removeItem(Item it) {
         return items.remove(items.indexOf(it));
     }
-    public double getPrice(){
+    public double getPrice() {
         return this.totalPrice;
     }
-    public List<Item> chechItems(){
+    public List<Item> chechItems() {
         return this.items;
     }
-    public void processOrder(){
+    public void processOrder() {
         payment.pay(items);
         delivery.deliver(items);
     }
-    public void setPaymentStrategy(Payment payment){
-        this.payment = payment;
+    public void setPaymentStrategy(Payment newPayment) {
+        this.payment = newPayment;
     }
-    public void setDeliveryStrategy(Delivery delivery){
-        this.delivery = delivery;
+    public void setDeliveryStrategy(Delivery newDelivery) {
+        this.delivery = newDelivery;
     }
 }

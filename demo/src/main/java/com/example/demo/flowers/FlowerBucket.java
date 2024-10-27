@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.ToString;
 
 @ToString
-public class FlowerBucket extends Item{
+public class FlowerBucket extends Item {
     private List<FlowerPack> flowerPacks;
 
     public FlowerBucket() {
@@ -27,7 +27,7 @@ public class FlowerBucket extends Item{
     @Override
     public String getDescription() {
         String res = "";
-        for (FlowerPack el : flowerPacks){
+        for (FlowerPack el : flowerPacks) {
             res += el.getDescription() + ", ";
         }
         return res.substring(0, res.length()-2);
