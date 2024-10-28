@@ -21,7 +21,8 @@ public class FlowerShopTests {
     private static final int SEPALLENGTH = 60;
     private static final double COSTDECORBASKET = 648.0;
     private Flower createStandardFlower() {
-        return new Flower(FlowerColor.RED, SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
+        return new Flower(FlowerColor.RED, SEPALLENGTH,
+        BASE_FLOWER_PRICE, FlowerType.ROSE);
     }
     private FlowerPack createStandardFlowerPack() {
         return new FlowerPack(createStandardFlower(), QUANTITY_FLOWER_PACK);
