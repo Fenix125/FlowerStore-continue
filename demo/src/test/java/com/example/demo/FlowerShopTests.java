@@ -72,9 +72,9 @@ public class FlowerShopTests {
         order.addItem(flowerBucket);
         order.addItem(flowerBucket);
 
-        Assertions.assertEquals(2 * 2 * QUANTITY_FLOWER_PACK * 
-        BASE_FLOWER_PRICE, order.getPrice());
-        Assertions.assertEquals(order.getPrice() + 
-        BASKET_DECORATOR_COST, COSTDECORBASKET);
+        Assertions.assertEquals(2 * 2 * QUANTITY_FLOWER_PACK 
+        * BASE_FLOWER_PRICE, order.getPrice());
+        Assertions.assertEquals(order.getPrice() 
+        + BASKET_DECORATOR_COST, COSTDECORBASKET);
     }
 }

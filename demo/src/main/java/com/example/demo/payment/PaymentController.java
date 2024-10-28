@@ -20,7 +20,6 @@ public class PaymentController {
         Reflections reflections = new Reflections("com.example.demo");
         Set<Class<? extends Payment>> subclasses = 
         reflections.getSubTypesOf(Payment.class);
-
         return subclasses.stream().map(Class::getSimpleName)
         .collect(Collectors.toList());
     }
