@@ -18,7 +18,7 @@ public class PaymentController {
     @GetMapping("/payment")
     public List<String> getPayments() {
         Reflections reflections = new Reflections("com.example.demo");
-        Set<Class <? extends Payment> > subclasses = 
+        Set<Class< ? extends Payment>> subclasses = 
         reflections.getSubTypesOf(Payment.class);
         return subclasses.stream().map(Class::getSimpleName)
         .collect(Collectors.toList());
