@@ -9,9 +9,10 @@ public class Flower extends Item {
     private int sepallength;
     private double price;
     private FlowerType flowerType;
+    private String description;
     public Flower() { }
     public Flower(Flower flower) {
-        setDescription(flower.toString());
+        this.description = flower.getDescription();
         this.color = flower.color;
         this.sepallength = flower.sepallength;
         this.price = flower.price;
@@ -23,14 +24,14 @@ public class Flower extends Item {
         this.sepallength = sepallength;
         this.price = price;
         this.flowerType = flowerType;
-        setDescription(this.toString());
+        this.description = "Flower(color="+color+", sepallength="+sepallength+", price="+price+", flowerType="+flowerType+")";
     }
     public String getColor() {
         return color.toString();
     }
     @Override
     public String getDescription() {
-        return this.description;
+        return description;
     }
     @Override
     public double getPrice() {

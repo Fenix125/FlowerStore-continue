@@ -9,8 +9,9 @@ import com.example.demo.flowers.FlowerBucket;
 import com.example.demo.flowers.FlowerPack;
 import com.example.demo.flowers.Order;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
+import org.junit.jupiter.api.Assertions;
 
 public class FlowerShopTests {
     private static final double BASE_FLOWER_PRICE = 80.5;
@@ -23,24 +24,27 @@ public class FlowerShopTests {
     public void testFlowerCreationAndDescription() {
         Item flower = new Flower(FlowerColor.RED, 
         SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
-        assertNotNull(flower);
-        assertEquals("Flower(color=#FF0000, "
-        +"sepallength=60, price=80.5, flowerType=ROSE)", flower.getDescription());
-        assertEquals(BASE_FLOWER_PRICE, flower.getPrice());
+        Assertions.assertNotNull(flower);
+        Assertions.assertEquals("Flower(color=#FF0000, "
+        +"sepallength=60, price=80.5, flowerType=ROSE)", 
+        flower.getDescription());
+        Assertions.assertEquals(BASE_FLOWER_PRICE, flower.getPrice());
     }
     @Test
     public void testFlowerWithPaperDecorator() {
         Item flower = new Flower(FlowerColor.RED, 
         SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
         flower = new PaperDecorator(flower);
-        assertEquals(BASE_FLOWER_PRICE + PAPER_DECORATOR_COST, flower.getPrice());
+        Assertions.assertEquals(BASE_FLOWER_PRICE + 
+        PAPER_DECORATOR_COST, flower.getPrice());
     }
     @Test
     public void testFlowerPackCreation() {
         Flower flower = new Flower(FlowerColor.RED, 
         SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
         Item flowerPack = new FlowerPack(flower, QUANTITY_FLOWER_PACK);
-        assertEquals(QUANTITY_FLOWER_PACK * BASE_FLOWER_PRICE, flowerPack.getPrice());
+        Assertions.assertEquals(QUANTITY_FLOWER_PACK *
+         BASE_FLOWER_PRICE, flowerPack.getPrice());
     }
 
     @Test
@@ -51,7 +55,7 @@ public class FlowerShopTests {
         FlowerBucket flowerBucket = new FlowerBucket();
         flowerBucket.add(flowerPack);
         flowerBucket.add(flowerPack);
-        assertEquals(2 * QUANTITY_FLOWER_PACK * BASE_FLOWER_PRICE, 
+        Assertions.assertEquals(2 * QUANTITY_FLOWER_PACK * BASE_FLOWER_PRICE, 
         flowerBucket.getPrice());
     }
 
@@ -68,7 +72,9 @@ public class FlowerShopTests {
         order.addItem(flowerBucket);
         order.addItem(flowerBucket);
 
-        assertEquals(2 * 2 * QUANTITY_FLOWER_PACK * BASE_FLOWER_PRICE, order.getPrice());
-        assertEquals(order.getPrice() + BASKET_DECORATOR_COST, COSTDECORBASKET);
+        Assertions.assertEquals(2 * 2 * QUANTITY_FLOWER_PACK * 
+        BASE_FLOWER_PRICE, order.getPrice());
+        Assertions.assertEquals(order.getPrice() + 
+        BASKET_DECORATOR_COST, COSTDECORBASKET);
     }
 }
