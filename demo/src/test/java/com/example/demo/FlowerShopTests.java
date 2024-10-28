@@ -35,16 +35,16 @@ public class FlowerShopTests {
         Item flower = new Flower(FlowerColor.RED, 
         SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
         flower = new PaperDecorator(flower);
-        Assertions.assertEquals(BASE_FLOWER_PRICE + 
-        PAPER_DECORATOR_COST, flower.getPrice());
+        Assertions.assertEquals(BASE_FLOWER_PRICE 
+        + PAPER_DECORATOR_COST, flower.getPrice());
     }
     @Test
     public void testFlowerPackCreation() {
         Flower flower = new Flower(FlowerColor.RED, 
         SEPALLENGTH, BASE_FLOWER_PRICE, FlowerType.ROSE);
         Item flowerPack = new FlowerPack(flower, QUANTITY_FLOWER_PACK);
-        Assertions.assertEquals(QUANTITY_FLOWER_PACK *
-         BASE_FLOWER_PRICE, flowerPack.getPrice());
+        Assertions.assertEquals(QUANTITY_FLOWER_PACK 
+        * BASE_FLOWER_PRICE, flowerPack.getPrice());
     }
 
     @Test

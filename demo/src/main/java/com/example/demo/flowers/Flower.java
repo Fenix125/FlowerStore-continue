@@ -24,7 +24,8 @@ public class Flower extends Item {
         this.sepallength = sepallength;
         this.price = price;
         this.flowerType = flowerType;
-        this.description = "Flower(color="+color+", sepallength="+sepallength+", price="+price+", flowerType="+flowerType+")";
+        this.description = "Flower(color="+color+", sepallength="
+        +sepallength+", price="+price+", flowerType="+flowerType+")";
     }
     public String getColor() {
         return color.toString();
